@@ -3,6 +3,8 @@ GAE - Spring Framework Integration - SQL POC
 
 POC (proof of concept) application using GAE and Spring Framework based on existing [work](https://bitbucket.org/lloal/spring-cloud-endpoint-poc) by Jordan and Alvin. 
 
+This is not a demonstration of behavior. Rather, this should serve as a template on configuring the frameworks.
+
 The goal of this project is to demonstrate the following:
 
 *   GAE and Spring Framework configuration to take advantage of Spring's IoC Container (a.k.a. dependency injection)
