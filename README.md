@@ -26,7 +26,7 @@ For Eclipse users:
 	
 For non-Eclipse users:
 
-	.../spring-gae-poc$ mvn clean install appengine:devserver 
+	.../spring-gae-poc$ mvn clean install
 	.../spring-gae-poc$ cd {module}
 	.../spring-gae-poc/{module}$ mvn appengine:devserver -Dappengine.port=#### 
 	
