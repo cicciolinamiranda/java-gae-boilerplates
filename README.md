@@ -3,7 +3,7 @@ GAE - Spring Framework Integration - SQL POC
 
 POC (proof of concept) application using GAE and Spring Framework based on existing [work](https://bitbucket.org/lloal/spring-cloud-endpoint-poc) by Jordan and Alvin. 
 
-This is not a demonstration of behavior. Rather, this should serve as a template on configuring the frameworks.
+**NOTE: This is not a demonstration of behavior. Rather, this should serve as a template for configuring the frameworks.**
 
 The goal of this project is to demonstrate the following:
 
@@ -13,7 +13,6 @@ The goal of this project is to demonstrate the following:
 *	Demonstrate profile based configuration (dev vs prod)
 *	Demonstrate Maven's multi-module capabilities
 *	(future) Demonstrate GAE Modules
-*	(future) Demonstrate Task Queue usage
 
 ## Modules
 *	spring-boot-gae-sql	(GAE + Spring Boot + Spring Data Auto Configuration)
