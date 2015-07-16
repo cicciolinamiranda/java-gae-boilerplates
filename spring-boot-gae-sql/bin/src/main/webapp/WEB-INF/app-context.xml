@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="customerDao" class="com.cloudsherpas.poc.dao.impl.CustomerDaoImpl" />
+    <bean id="orderDao" class="com.cloudsherpas.poc.dao.impl.OrderDaoImpl"  />
+    <bean id="productDao" class="com.cloudsherpas.poc.dao.impl.ProductDaoImpl" />
+
+    <bean id="customerService" class="com.cloudsherpas.poc.service.CustomerService" />
+    <bean id="orderService" class="com.cloudsherpas.poc.service.OrderService" />
+    <bean id="productService" class="com.cloudsherpas.poc.service.ProductService" />
+
+    <context:annotation-config />
+</beans>
