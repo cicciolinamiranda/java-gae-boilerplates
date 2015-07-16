@@ -35,7 +35,7 @@
     <!-- Google App Engine API Explorer -->
     <servlet>
         <servlet-name>SystemServiceServlet</servlet-name>
-        <servlet-class>com.cloudsherpas.poc.compatibility.AutowireSupportServiceServlet
+        <servlet-class>com.cloudsherpas.compatibility.AutowireSupportSystemServiceServlet
         </servlet-class>
         <init-param>
             <param-name>services</param-name>

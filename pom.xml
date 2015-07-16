@@ -17,6 +17,7 @@
     </prerequisites>
 
     <modules>
+        <module>spring-gae-compatibility</module>
         <module>spring-boot-gae-sql</module>
         <module>spring-gae-sql</module>
     </modules>
@@ -27,9 +28,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.cloudsherpas</groupId>
+                <artifactId>spring-gae-compatibility</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-    <!-- Not to be confused with dependencyManagement these dependencies 
-        WILL be applied to inheriting POMs -->
+    <!-- Not to be confused with dependencyManagement these dependencies WILL be applied to inheriting POMs -->
     <dependencies>
         <dependency>
             <groupId>commons-lang</groupId>
@@ -68,8 +77,6 @@
 
 
     <build>
-        <!-- Not to be confused with pluginManagement these plugins WILL 
-            be applied to inheriting POMs -->
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -118,11 +125,10 @@
                     <configuration>
                         <enableJarClasses>false</enableJarClasses>
                         <version>${app.version}</version>
-                        <!-- Comment in the below snippet to bind to all 
-                            IPs instead of just localhost -->
+                        <!-- Comment in the below snippet to bind to all IPs instead of just localhost -->
                         <!-- address>0.0.0.0</address> <port>8080</port -->
-                        <!-- Comment in the below snippet to enable local 
-                            debugging with a remote debugger like those included with Eclipse or IntelliJ -->
+                        <!-- Comment in the below snippet to enable local debugging with a remote debugger like those included 
+                            with Eclipse or IntelliJ -->
                         <!-- jvmFlags> <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag> 
                             </jvmFlags -->
                     </configuration>
