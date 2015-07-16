@@ -16,6 +16,7 @@ The goal of this project is to demonstrate the following:
 ## Modules
 *	spring-boot-gae-sql	(GAE + Spring Boot + Spring Data Auto Configuration)
 *	spring-gae-sql	(GAE + Spring + Spring Data)
+*	spring-gae-compatibility (contains classes customized to merge Spring and GAE features)
 
 ## How to run
 For Eclipse users:
