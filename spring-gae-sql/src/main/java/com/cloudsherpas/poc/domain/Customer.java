@@ -27,7 +27,7 @@ public class Customer {
     private String name;
 
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
-    @Column(name="date_created")
+    @Column(name = "date_created")
     private DateTime dateCreated;
 
     public Customer() {

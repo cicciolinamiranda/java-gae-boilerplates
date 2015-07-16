@@ -48,7 +48,7 @@ public class CustomerService {
     }
 
     public void updateCustomer(Long key, final CustomerDTO customerDTO) {
-        
+
         Customer toUpdate = customerRepo.findOne(key);
         toUpdate.mapNonIdFields(customerDTO);
         customerRepo.save(toUpdate);
