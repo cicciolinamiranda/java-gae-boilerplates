@@ -53,6 +53,12 @@ public class DatabaseConfiguration {
         return txManager;
     }
 
+    /*
+     * (non-javadoc)
+     * 
+     * Use Tomcat 7 DBCP because GAE restricts usage on
+     * java.lang.management.ManagementFactory
+     */
     @Bean
     public DataSource dataSource() {
         BasicDataSource datasource = new BasicDataSource();
