@@ -1,4 +1,4 @@
-GAE - Spring Framework Integration POC
+GAE - Spring Framework Integration - SQL POC
 ==================
 
 POC (proof of concept) application using GAE and Spring Framework based on existing [work](https://bitbucket.org/lloal/spring-cloud-endpoint-poc) by Jordan and Alvin. 
