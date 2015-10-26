@@ -5,6 +5,15 @@ Working Java project boilerpates for Google App Engine, Cloud Endpoints, and Clo
 The samples as of writing are all for SQL databases because they are harder to configure
 compared to Datastore which practically needs no configuration.
 
+### How do I choose?
+* Want sure compatibility with GAE? **Guice**
+* Want a lightweight application? **Guice**
+* Want faster development for the persistence layer? **Spring (spring-data)[1]**
+* Want to implement custom authentication? **Spring (spring-security)[1]**
+
+[1] Using Spring in GAE may not be as smooth as it could be due to JVM restrictions. Spring is best used for deployment to native JVM environments (GCE, Amazon EC2).
+
+
 ### Note
 All Spring boilerplates use Spring 4
 
