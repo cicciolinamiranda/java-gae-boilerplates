@@ -1,0 +1,57 @@
+[33m[WARNING][m The SLF4J binding actually used is not supported by Maven: org.slf4j.helpers.Log4JLoggerFactory
+[33m[WARNING][m Maven supported bindings are:
+[33m[WARNING][m (from jar:file:/usr/local/apache-maven/apache-maven-3.3.3/lib/maven-embedder-3.3.3.jar!/META-INF/maven/slf4j-configuration.properties)
+- ch.qos.logback.classic.LoggerContext
+- org.slf4j.helpers.Log4jLoggerFactory
+- org.slf4j.impl.SimpleLoggerFactory
+[32m[INFO][m Scanning for projects...
+[32m[INFO][m                                                                         
+[32m[INFO][m ------------------------------------------------------------------------
+[32m[INFO][m Building guice-hibernate-sql 0.0.1-SNAPSHOT
+[32m[INFO][m ------------------------------------------------------------------------
+[32m[INFO][m 
+[32m[INFO][m --- maven-dependency-plugin:2.8:tree (default-cli) @ guice-hibernate-sql ---
+[32m[INFO][m com.cloudsherpas:guice-hibernate-sql:war:0.0.1-SNAPSHOT
+[32m[INFO][m +- commons-lang:commons-lang:jar:2.6:compile
+[32m[INFO][m +- com.google.appengine:appengine-api-1.0-sdk:jar:1.9.27:compile
+[32m[INFO][m +- com.google.appengine:appengine-endpoints:jar:1.9.27:compile
+[32m[INFO][m +- com.google.inject:guice:jar:4.0:compile
+[32m[INFO][m |  \- aopalliance:aopalliance:jar:1.0:compile
+[32m[INFO][m +- com.google.inject.extensions:guice-servlet:jar:4.0:compile
+[32m[INFO][m +- com.google.inject.extensions:guice-persist:jar:4.0:compile
+[32m[INFO][m +- com.google.guava:guava:jar:18.0:compile
+[32m[INFO][m +- org.hibernate:hibernate-validator:jar:5.2.2.Final:compile
+[32m[INFO][m |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+[32m[INFO][m |  +- org.jboss.logging:jboss-logging:jar:3.2.1.Final:compile
+[32m[INFO][m |  \- com.fasterxml:classmate:jar:1.1.0:compile
+[32m[INFO][m +- org.hibernate:hibernate-entitymanager:jar:5.0.2.Final:compile
+[32m[INFO][m |  +- dom4j:dom4j:jar:1.6.1:compile
+[32m[INFO][m |  |  \- xml-apis:xml-apis:jar:1.0.b2:compile
+[32m[INFO][m |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.0.Final:compile
+[32m[INFO][m |  +- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Final:compile
+[32m[INFO][m |  +- org.apache.geronimo.specs:geronimo-jta_1.1_spec:jar:1.1.1:compile
+[32m[INFO][m |  \- org.javassist:javassist:jar:3.18.1-GA:compile
+[32m[INFO][m +- org.hibernate:hibernate-core:jar:5.0.2.Final:compile
+[32m[INFO][m |  +- antlr:antlr:jar:2.7.7:compile
+[32m[INFO][m |  \- org.jboss:jandex:jar:1.2.2.Final:compile
+[32m[INFO][m +- joda-time:joda-time:jar:2.5:compile
+[32m[INFO][m +- org.jadira.usertype:usertype.extended:jar:4.0.0.GA:compile
+[32m[INFO][m |  +- org.slf4j:slf4j-api:jar:1.7.12:compile
+[32m[INFO][m |  +- org.jadira.usertype:usertype.spi:jar:4.0.0.GA:compile
+[32m[INFO][m |  \- org.jadira.usertype:usertype.core:jar:4.0.0.GA:compile
+[32m[INFO][m +- javax.inject:javax.inject:jar:1:compile
+[32m[INFO][m +- mysql:mysql-connector-java:jar:5.1.36:compile
+[32m[INFO][m +- org.apache.tomcat:tomcat-dbcp:jar:7.0.64:compile
+[32m[INFO][m +- javax.servlet:servlet-api:jar:2.5:provided
+[32m[INFO][m +- junit:junit:jar:4.12:test
+[32m[INFO][m |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[32m[INFO][m +- org.mockito:mockito-all:jar:2.0.2-beta:test
+[32m[INFO][m +- com.google.appengine:appengine-testing:jar:1.9.27:test
+[32m[INFO][m \- com.google.appengine:appengine-api-stubs:jar:1.9.27:test
+[32m[INFO][m ------------------------------------------------------------------------
+[32m[INFO][m BUILD SUCCESS
+[32m[INFO][m ------------------------------------------------------------------------
+[32m[INFO][m Total time: 2.423 s
+[32m[INFO][m Finished at: 2015-10-26T16:23:14+08:00
+[32m[INFO][m Final Memory: 18M/211M
+[32m[INFO][m ------------------------------------------------------------------------

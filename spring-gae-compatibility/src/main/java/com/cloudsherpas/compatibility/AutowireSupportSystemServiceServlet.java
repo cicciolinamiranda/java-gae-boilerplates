@@ -1,8 +1,7 @@
 package com.cloudsherpas.compatibility;
 
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-
 import com.google.api.server.spi.SystemServiceServlet;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 public class AutowireSupportSystemServiceServlet extends SystemServiceServlet {
 

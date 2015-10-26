@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script type="text/javascript">
+    function init() {
+      var ROOT = 'http://localhost:8080/_ah/api';
+      gapi.client.load('todo', '1', function () {
+        angular.bootstrap(document, ['app']);
+      }, ROOT);
+    }
+
+    </script>
+    <script>
+    var CLIENT_ID = '702432393067-2aej40l20jhl204fnprodfbkq2j32ef0.apps.googleusercontent.com'; //place your GAE Client ID here
+    angular.module('app', [])
+            .controller('AppController', ['$scope', function ($scope) {
+              var _this = this;
+
+              _this.logged = false;
+              _this.newTodo = {
+                name: '',
+                due: ''
+              };
+              _this.calNum = 1;
+              _this.dateFormat = 'YYYY-MM-DD';
+              _this.todos = [];
+
+              _this.login = login;
+              _this.listToDo = listToDo;
+              _this.addToDo = addToDo;
+              _this.format = format;
+
+              function login() {
+                gapi.auth.authorize({
+                  client_id: CLIENT_ID, scope: ['https://www.googleapis.com/auth/userinfo.email'],
+                  immediate: false
+                }).then(changeLoginState);
+              }
+
+              function listToDo() {
+                gapi.client.todo.list().then(function (response) {
+                  $scope.$apply(function () {
+                    _this.todos = response.result.items;
+                  })
+                });
+              }
+
+              function addToDo() {
+                var toDo = {
+                  name: _this.newTodo.name,
+                  dueDateMillis: new Date(_this.newTodo.due).getTime()
+                }
+                gapi.client.todo.add(toDo).then(function () {
+                  $scope.$apply(function () {
+                    _this.listToDo();
+                  })
+                });
+              }
+
+              function format(m) {
+                return new Date(Number(m)).toString();
+              }
+
+              function changeLoginState() {
+                $scope.$apply(function () {
+                  _this.logged = true;
+                  listToDo();
+                })
+              };
+            }]);
+
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <title>Google App Engine: Spring Boot</title>
+</head>
+<body ng-cloak ng-controller="AppController as ac">
+<div ng-if="!ac.logged">
+    <button ng-click="ac.login()">Log in</button>
+</div>
+<div ng-if="ac.logged">
+    <form ng-submit="ac.addToDo()">
+        <table>
+            <tr>
+                <td>
+                    <label for="name">NAME:</label>
+                </td>
+                <td>
+                    <input id="name" type="text" ng-model="ac.newTodo.name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="due">DUE DATE (YYYY-MM-DD):</label>
+                </td>
+                <td>
+                    <input id="due" type="text" ng-model="ac.newTodo.due">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Due</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="todo in ac.todos">
+            <td>{{todo.name}}</td>
+            <td>{{ac.format(todo.dueDateMillis)}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
