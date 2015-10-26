@@ -41,6 +41,9 @@ To update the database schema, run `mvn liquibase:update`. To drop everything ru
 *	`spring-gae-compatibility`
 	(contains classes customized to make Spring and GAE features work together)
 
+## Configuring DB Connection
+* Update values in `{module}/liquibase/liquibase.properties` 
+* Update values in `{module}/src/main/resources/application-*.properties`
 ## Folder Structure
 ### Under `src/main`
 * `java` contains Java source codes
