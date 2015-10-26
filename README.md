@@ -24,6 +24,10 @@ Traditional Spring on the other hand makes no assumptions and lets the developer
 ### Note
 All Spring boilerplates use Spring 4
 
+## Liquibase
+You may notice that all the modules have a dependency to [Liquibase](http://www.liquibase.org/). Liquibase is a nifty tool for dealing with tracking of database changes, particularly in the schema. It also helps a new developer to setup a database when joining a project.
+
+To update the database schema, run `mvn liquibase:update`. To drop everything run `mvn liquibase:dropAll`.
 
 ## Modules
 *	`boot-dataJPA-sql`
