@@ -5,6 +5,8 @@ Working Java project boilerpates for Google App Engine, Cloud Endpoints, and Clo
 The samples as of writing are all for SQL databases because they are harder to configure
 compared to Datastore which practically needs no configuration.
 
+All of the modules implement the same behavior. A simple "To-Do Application" that requires a Google login. Users can place To-do items and specify its due date.
+
 ### How do I choose?
 * Want sure compatibility with GAE? **Guice**
 * Want a lightweight application? **Guice**
