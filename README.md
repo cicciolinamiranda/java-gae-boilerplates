@@ -1,4 +1,4 @@
-GAE - Spring Framework Integration - SQL POC
+GAE - Java
 ==================
 
 Working Java project boilerpates for Google App Engine, Cloud Endpoints, and Cloud SQL.
@@ -26,4 +26,4 @@ For non-Eclipse users:
 
 	$ mvn clean install
 	$ cd {module}
-	$ mvn appengine:devserver -Dappengine.port=#### 
+	$ mvn appengine:devserver -Dappengine.port=####
