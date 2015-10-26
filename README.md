@@ -26,10 +26,14 @@ All Spring boilerplates use Spring 4
 
 
 ## Modules
-*	boot-dataJPA-sql			(Spring Boot + Spring Data JPA with default auto-configuration)
-*   guice-hibernate-sql 		(Google Guice + Hibernate)
-*	spring-dataJPA-sql			(Spring + Spring Data JPA with traditional annotation based configuration)
-*	spring-gae-compatibility	(contains classes customized to make Spring and GAE features work together)
+*	`boot-dataJPA-sql`
+			(Spring Boot + Spring Data JPA with default auto-configuration)
+*   `guice-hibernate-sql`
+ 		(Google Guice + Hibernate)
+*	`spring-dataJPA-sql`
+			(Spring + Spring Data JPA with traditional annotation based configuration)
+*	`spring-gae-compatibility`
+	(contains classes customized to make Spring and GAE features work together)
 
 ## How to run
 For Eclipse users:
