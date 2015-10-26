@@ -13,40 +13,44 @@ import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
 import org.hibernate.cfg.Environment;
 
 import javax.inject.Singleton;
-import javax.sql.DataSource;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 public class GuiceCloudEndpointModule extends GuiceSystemServiceServletModule {
 
     @Override
     protected void configureServlets() {
-        Map<String, Object> p = new HashMap();
-        p.put(Environment.DATASOURCE, datasource());
-        JpaPersistModule jpm = new JpaPersistModule("persistenceUnit");
-        jpm.properties(p);
-        this.install(jpm);
-        Set<Class<?>> serviceClasses = new HashSet<>();
-        serviceClasses.add(ToDoEndpoint.class);
+        try {
+            Properties properties = properties();
+            BasicDataSource datasource = new BasicDataSource();
+            datasource.setDriverClassName(properties.getProperty("datasource.driver-class-name"));
+            datasource.setUrl(properties.getProperty("datasource.url"));
+            datasource.setUsername(properties.getProperty("datasource.username"));
+            datasource.setPassword(properties.getProperty("datasource.password"));
+            datasource.setMaxActive(12);
 
-        this.filter("/*")
-            .through(PersistFilter.class);
-        this.serveGuiceSystemServiceServlet("/_ah/spi/*", serviceClasses);
+            Map<String, Object> p = new HashMap();
+            p.put(Environment.DATASOURCE, datasource);
+            JpaPersistModule jpm = new JpaPersistModule("persistenceUnit");
+            jpm.properties(p);
+            this.install(jpm);
+            Set<Class<?>> serviceClasses = new HashSet<>();
+            serviceClasses.add(ToDoEndpoint.class);
+
+            this.filter("/*")
+                .through(PersistFilter.class);
+            this.serveGuiceSystemServiceServlet("/_ah/spi/*", serviceClasses);
+        } catch (IOException e) {
+            throw new IllegalArgumentException();
+        }
     }
 
     @Provides
     @Singleton
-    public DataSource datasource() {
-        BasicDataSource datasource = new BasicDataSource();
-        datasource.setDriverClassName("com.mysql.jdbc.Driver");
-        datasource.setUrl("jdbc:mysql://localhost/test?user=root");
-        datasource.setUsername("root");
-        datasource.setPassword("pass");
-        datasource.setMaxActive(12);
-        return datasource;
+    public Properties properties() throws IOException {
+        Properties prop = new Properties();
+        prop.load(this.getClass()
+                      .getClassLoader().getResourceAsStream("application.properties"));
+        return prop;
     }
-
-
 }
