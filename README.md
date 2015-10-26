@@ -42,16 +42,26 @@ To update the database schema, run `mvn liquibase:update`. To drop everything ru
 	(contains classes customized to make Spring and GAE features work together)
 
 ## Folder Structure
+### Under `src/main`
+* `java` contains Java source codes
+* `resource` contains classpath resources. These are usually property files, configuration XML (e.g. persistence.xml), view templates (e.g. Thymeleaf, Mustache, JSP).
+* `webapp` contains files needed by the application container (e.g. Tomcat, Glassfish, GAE).
+
 ### Under `src/main/java`
-* `com.cloudsherpas.java.api` contains the classes that represent the REST API that will be exposed
-  * `endpoint` - API Endpoint Classes (e.g. Cloud Endpoints, Jersey Endpoints, Spring REST Controllers, etc.)
-  * `resource` - Classes that are serialized to the JSON payload.
-* `com.cloudsherpas.java.config` contains classes that configure the application such as wiring/declaring dependencies.`
-* `com.cloudsherpas.java.data` contains classes that interact or represent the data layer
-  * `domain` - domain data models for the ORM. (i.e. classes that represent the DB tables)
-  * `repository` - classes that abstract the DAO as repositories. These classes represent results as collections of entities. Hence the name 'repository'.
-* `com.cloudsherpas.java.service` contains classes that implement business logic in the application
-* `com.cloudsherpas.java.util` contains utility classes for that application (e.g. mapping domain models to resources)
+* `com.cloudsherpas.java.api` contains the classes that represent the REST API that will be exposed.
+    * `endpoint` - API Endpoint Classes (e.g. Cloud Endpoints, Jersey Endpoints, Spring REST Controllers, etc.).
+    * `resource` - Classes that are serialized to the JSON payload.
+
+* `com.cloudsherpas.java.config` contains classes that configure the application such as wiring/declaring dependencies.
+
+* `com.cloudsherpas.java.data` contains classes that interact or represent the data layer.
+    * `domain` - domain data models for the ORM. (i.e. classes that represent the DB tables).
+    * `repository` - classes that abstract the DAO as repositories. These classes represent results as collections of entities. Hence the name 'repository'.
+
+* `com.cloudsherpas.java.service` contains classes that implement business logic in the application.
+
+* `com.cloudsherpas.java.util` contains utility classes for that application (e.g. mapping domain models to resources).
+
 * `Application.class` (Spring Boot only) Entry point of the Spring Boot application.
 
 ## How to run
