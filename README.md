@@ -41,9 +41,6 @@ To update the database schema, run `mvn liquibase:update`. To drop everything ru
 *	`spring-gae-compatibility`
 	(contains classes customized to make Spring and GAE features work together)
 
-## Configuring DB Connection
-* Update values in `{module}/liquibase/liquibase.properties` 
-* Update values in `{module}/src/main/resources/application-*.properties`
 ## Folder Structure
 ### Under `src/main`
 * `java` contains Java source codes
@@ -66,6 +63,10 @@ To update the database schema, run `mvn liquibase:update`. To drop everything ru
 * `com.cloudsherpas.java.util` contains utility classes for that application (e.g. mapping domain models to resources).
 
 * `Application.class` (Spring Boot only) Entry point of the Spring Boot application.
+
+## Configuring DB Connection
+* Update values in `{module}/liquibase/liquibase.properties` 
+* Update values in `{module}/src/main/resources/application-*.properties`
 
 ## How to run
 For Eclipse users:
