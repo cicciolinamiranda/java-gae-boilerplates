@@ -42,8 +42,8 @@ public class ToDoResource {
         }
         ToDoResource that = (ToDoResource) o;
         return Objects.equals(getDueDateMillis(), that.getDueDateMillis()) &&
-                Objects.equals(getId(), that.getId()) &&
-                Objects.equals(getName(), that.getName());
+            Objects.equals(getId(), that.getId()) &&
+            Objects.equals(getName(), that.getName());
     }
 
     @Override

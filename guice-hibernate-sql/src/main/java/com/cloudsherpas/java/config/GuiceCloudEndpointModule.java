@@ -50,7 +50,8 @@ public class GuiceCloudEndpointModule extends GuiceSystemServiceServletModule {
     public Properties properties() throws IOException {
         Properties prop = new Properties();
         prop.load(this.getClass()
-                      .getClassLoader().getResourceAsStream("application.properties"));
+                      .getClassLoader()
+                      .getResourceAsStream("application.properties"));
         return prop;
     }
 }

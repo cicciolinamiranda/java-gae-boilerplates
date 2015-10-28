@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script type="text/javascript">
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script type="text/javascript">
     function init() {
       var ROOT = 'http://localhost:8080/_ah/api';
       gapi.client.load('todo', '1', function () {
@@ -12,8 +12,12 @@
       }, ROOT);
     }
 
-    </script>
-    <script>
+
+
+
+
+  </script>
+  <script>
     var CLIENT_ID = '702432393067-2aej40l20jhl204fnprodfbkq2j32ef0.apps.googleusercontent.com'; //place your GAE Client ID here
     angular.module('app', [])
             .controller('AppController', ['$scope', function ($scope) {
@@ -72,50 +76,54 @@
               };
             }]);
 
-    </script>
-    <script src="https://apis.google.com/js/client.js?onload=init"></script>
-    <title>Google App Engine: Spring Boot</title>
+
+
+
+
+  </script>
+  <script src="https://apis.google.com/js/client.js?onload=init"></script>
+  <title>Google App Engine: Spring Boot</title>
 </head>
 <body ng-cloak ng-controller="AppController as ac">
 <div ng-if="!ac.logged">
-    <button ng-click="ac.login()">Log in</button>
+  <button ng-click="ac.login()">Log in</button>
 </div>
 <div ng-if="ac.logged">
-    <form ng-submit="ac.addToDo()">
-        <table>
-            <tr>
-                <td>
-                    <label for="name">NAME:</label>
-                </td>
-                <td>
-                    <input id="name" type="text" ng-model="ac.newTodo.name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="due">DUE DATE (YYYY-MM-DD):</label>
-                </td>
-                <td>
-                    <input id="due" type="text" ng-model="ac.newTodo.due">
-                </td>
-            </tr>
-        </table>
-        <button type="submit">Submit</button>
-    </form>
+  <form ng-submit="ac.addToDo()">
     <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Due</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="todo in ac.todos">
-            <td>{{todo.name}}</td>
-            <td>{{ac.format(todo.dueDateMillis)}}</td>
-        </tr>
-        </tbody>
+      <tr>
+        <td>
+          <label for="name">NAME:</label>
+        </td>
+        <td>
+          <input id="name" type="text" ng-model="ac.newTodo.name">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="due">DUE DATE (YYYY-MM-DD):</label>
+        </td>
+        <td>
+          <input id="due" type="text" ng-model="ac.newTodo.due">
+        </td>
+      </tr>
     </table>
+    <button type="submit">Submit</button>
+  </form>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Due</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="todo in ac.todos">
+      <td>{{todo.name}}</td>
+      <td>{{ac.format(todo.dueDateMillis)}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 </body>
 </html>

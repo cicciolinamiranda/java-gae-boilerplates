@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="1" author="rey">
-        <comment>Create TODO table</comment>
-        <createTable tableName="todo">
-            <column name="id" type="NUMERIC">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="name" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="date_created" type="DATETIME">
-                <constraints nullable="false"/>
-            </column>
-            <column name="date_modified" type="DATETIME">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-        <rollback>
-            <dropTable tableName="TODO"/>
-        </rollback>
-    </changeSet>
-    <changeSet id="2" author="rey">
-        <comment>Add DUE_DATE column to TODO</comment>
-        <addColumn tableName="todo">
-            <column name="due_date" type="DATETIME">
-                <constraints nullable="false"/>
-            </column>
-        </addColumn>
-        <rollback>
-            <dropColumn tableName="todo" columnName="due_date"/>
-        </rollback>
-    </changeSet>
-    <changeSet id="3" author="rey">
-        <comment>Add DUE_DATE column to TODO</comment>
-        <addColumn tableName="todo">
-            <column name="owner_email" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-        </addColumn>
-        <rollback>
-            <dropColumn tableName="todo" columnName="owner_email"/>
-        </rollback>
-    </changeSet>
+  <changeSet id="1" author="rey">
+    <comment>Create TODO table</comment>
+    <createTable tableName="todo">
+      <column name="id" type="NUMERIC">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="date_created" type="DATETIME">
+        <constraints nullable="false"/>
+      </column>
+      <column name="date_modified" type="DATETIME">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="TODO"/>
+    </rollback>
+  </changeSet>
+  <changeSet id="2" author="rey">
+    <comment>Add DUE_DATE column to TODO</comment>
+    <addColumn tableName="todo">
+      <column name="due_date" type="DATETIME">
+        <constraints nullable="false"/>
+      </column>
+    </addColumn>
+    <rollback>
+      <dropColumn tableName="todo" columnName="due_date"/>
+    </rollback>
+  </changeSet>
+  <changeSet id="3" author="rey">
+    <comment>Add DUE_DATE column to TODO</comment>
+    <addColumn tableName="todo">
+      <column name="owner_email" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </addColumn>
+    <rollback>
+      <dropColumn tableName="todo" columnName="owner_email"/>
+    </rollback>
+  </changeSet>
 </databaseChangeLog>

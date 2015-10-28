@@ -26,7 +26,7 @@ public class ToDoRepository extends BaseCrudRepository<ToDo, Long> {
         Root<ToDo> root = criteria.from(ToDo.class);
         criteria.select(root);
         criteria.where(
-                cb.equal(root.get("ownerEmail"), cb.literal(email))
+            cb.equal(root.get("ownerEmail"), cb.literal(email))
         );
         List<ToDo> resultList = em.createQuery(criteria)
                                   .getResultList();

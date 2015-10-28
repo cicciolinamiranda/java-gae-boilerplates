@@ -1,0 +1,24 @@
+# http://editorconfig.org
+
+# This file should be added in the root directory of the project
+root = true
+
+# Standard formatting on all files
+[*]
+charset = utf-8
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Files that all allow trailing spaces
+[*.md}]
+trim_trailing_whitespace = false
+
+# File extensions that requires 4 spaces for indention
+[**.{java,py}]
+indent_size = 4
+
+# File extensions that requires 2 spaces for indention
+[**.{html,js,css,sh,json,xml,yaml}]
+indent_size = 2
