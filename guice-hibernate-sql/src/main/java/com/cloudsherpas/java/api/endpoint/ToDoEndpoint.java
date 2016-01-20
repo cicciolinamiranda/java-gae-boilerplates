@@ -44,7 +44,6 @@ public class ToDoEndpoint {
     @ApiMethod(name = "update",
                path = "update/{id}",
                httpMethod = ApiMethod.HttpMethod.PUT)
-    // This should be PATCH. For now, we don't use PUT because PUT implies replacing an entire entity.
     public void updateToDo(@Named("id") Long id,
                            ToDoResource toDoResource) throws NoSuchFieldException, IllegalAccessException {
         toDoService.updateToDo(id, toDoResource);
