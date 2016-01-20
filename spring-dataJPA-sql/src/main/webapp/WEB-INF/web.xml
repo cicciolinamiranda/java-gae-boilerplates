@@ -12,7 +12,7 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-      com.cloudsherpas.java.config.ApplicationConfiguration
+      com.cloudsherpas.java.Application
     </param-value>
   </context-param>
 
@@ -21,15 +21,26 @@
     </listener-class>
   </listener>
 
-  <!-- Spring MVC Context Initializer -->
-  <!-- Uncomment the following tag if you wish to use Spring MVC <servlet>
-      <servlet-name>springAppServlet</servlet-name> <servlet-class>org.springframework.web.servlet.DispatcherServlet
-      </servlet-class> <init-param> <param-name>contextClass</param-name> <param-value>
-      org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-      </param-value> </init-param> <init-param> <param-name>contextConfigLocation</param-name>
-      <param-value>MVC Config Class</param-value> </init-param> </servlet> <servlet-mapping>
-      <servlet-name>springAppServlet</servlet-name> <url-pattern>/</url-pattern>
-      </servlet-mapping> -->
+  <!-- Spring Context Initializer -->
+  <servlet>
+    <servlet-name>springAppServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+      <param-name>contextClass</param-name>
+      <param-value>
+        org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>com.cloudsherpas.java.Application</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springAppServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
 
   <!-- Google App Engine API Explorer -->
   <servlet>

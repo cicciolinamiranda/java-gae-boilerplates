@@ -8,9 +8,11 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @Api(name = "todo",
      scopes = {"https://www.googleapis.com/auth/userinfo.email"},
      clientIds = {"702432393067-2aej40l20jhl204fnprodfbkq2j32ef0.apps.googleusercontent.com"},
