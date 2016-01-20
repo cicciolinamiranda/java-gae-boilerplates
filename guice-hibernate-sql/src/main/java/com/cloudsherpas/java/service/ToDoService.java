@@ -21,7 +21,7 @@ public class ToDoService {
     @Inject
     private ToDoRepository toDoRepo;
 
-    public ToDoResource getToDo(final Long key) {
+    public ToDoResource getToDo(Long key) {
         ToDo toDo = toDoRepo.findOne(key);
         return toResource(toDo);
     }
@@ -51,7 +51,7 @@ public class ToDoService {
         toDoRepo.save(toDo);
     }
 
-    public void deleteToDo(final Long key) {
+    public void deleteToDo(Long key) {
         toDoRepo.delete(key);
     }
 }
