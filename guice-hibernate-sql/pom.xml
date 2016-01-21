@@ -30,17 +30,12 @@
   </prerequisites>
 
   <dependencies>
-    <!-- Compile/runtime dependencies -->
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
       <version>${commons.lang.version}</version>
     </dependency>
-    <!--<dependency>
-        <groupId>com.google.appengine</groupId>
-        <artifactId>appengine-java-sdk</artifactId>
-        <version>${appengine.version}</version>
-    </dependency>-->
+
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-1.0-sdk</artifactId>
@@ -89,7 +84,6 @@
       <version>${hibernate.version}</version>
     </dependency>
 
-
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
@@ -101,12 +95,6 @@
       <version>4.0.0.GA</version>
     </dependency>
 
-
-    <dependency>
-      <groupId>javax.inject</groupId>
-      <artifactId>javax.inject</artifactId>
-      <version>1</version>
-    </dependency>
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -123,7 +111,6 @@
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
-
 
     <!-- Test Dependencies -->
     <dependency>
@@ -153,26 +140,9 @@
   </dependencies>
 
   <build>
-    <!-- for hot reload of the web application-->
-    <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>versions-maven-plugin</artifactId>
-        <version>2.1</version>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <goals>
-              <goal>display-dependency-updates</goal>
-              <goal>display-plugin-updates</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <version>3.1</version>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.7</source>
@@ -182,14 +152,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.4</version>
         <configuration>
           <webXml>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF/web.xml</webXml>
           <webResources>
             <resource>
-              <!-- this is relative to the pom.xml directory -->
               <directory>${project.build.directory}/generated-sources/appengine-endpoints</directory>
-              <!-- the list has a default value of ** -->
               <includes>
                 <include>WEB-INF/*.discovery</include>
                 <include>WEB-INF/*.api</include>
@@ -249,5 +216,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
